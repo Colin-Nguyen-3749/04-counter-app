@@ -10,12 +10,16 @@ let count = 0;
 
 // Add a click event listener to the Enter button
 enterButton.addEventListener("click", function() {
-  count++; // Increase the count by 1
-  countDisplay.textContent = count; // Update the display
+  if (count < 50) { // Only increase if count is less than 50
+    count = count + 1;
+    countDisplay.textContent = count;
+  }
 });
 
 // Add a click event listener to the Exit button
 exitButton.addEventListener("click", function() {
-  count = count - 1; // Decrease the count by 1
-  countDisplay.textContent = count; // Update the display
+  if (count > 0) { // Only decrease if count is greater than 0
+    count = count - 1;
+    countDisplay.textContent = count;
+  }
 });
